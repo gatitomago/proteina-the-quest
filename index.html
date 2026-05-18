@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIPTOFANITO - Un Viaje por el Cuerpo Humano</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- PANTALLA DE INICIO -->
+        <div id="startScreen" class="screen">
+            <div class="screen-content start-content">
+                <div class="start-header">
+                    <h1>🥚 TRIPTOFANITO 🥚</h1>
+                    <h2>Un Viaje por el Cuerpo Humano</h2>
+                </div>
+                
+                <div class="start-body">
+                    <p>¡Bienvenido, pequeña proteína!</p>
+                    <p>Tu nombre es <strong>TRIPTOFANITO</strong> y acabas de nacer dentro de un huevo.</p>
+                    
+                    <div class="objective-section">
+                        <h3>📋 OBJETIVO:</h3>
+                        <p>Guía a Triptofanito a través de los diferentes sistemas del cuerpo humano:</p>
+                        <ul>
+                            <li>👄 Nivel 1: BOCA - Entrada al Viaje</li>
+                            <li>🫀 Nivel 2: ESTÓMAGO - Digestión</li>
+                            <li>💓 Nivel 3: SISTEMA CIRCULATORIO - Transporte</li>
+                            <li>❤️ Nivel 4: CORAZÓN - Latidos Vitales</li>
+                            <li>🧠 Nivel 5: SISTEMA NERVIOSO - Señales Rápidas</li>
+                            <li>🧬 Nivel 6: RIÑONES - Filtrar y Equilibrar y derrotar al jefe final</li>
+                        </ul>
+                        <p>Evita virus y bacterias, recolecta las energías adecuadas, y consigue la Pistola de Agua para bajar los 10 corazones del jefe final.</p>
+                    </div>
+                    
+                    <div class="controls-section">
+                        <h3>🎮 CONTROLES:</h3>
+                        <p>← → Mover | ESPACIO Saltar | P Pausa | F Disparar (Nivel 6)</p>
+                    </div>
+                </div>
+                
+                <button class="start-button" onclick="startGame()">INICIAR JUEGO</button>
+            </div>
+        </div>
+
+        <!-- ENCABEZADO DEL JUEGO -->
+        <div class="game-header">
+            <h1>🥚 TRIPTOFANITO 🥚</h1>
+            <div class="game-info">
+                <div class="info-item">
+                    <span>VIDAS:</span>
+                    <span id="lives" class="value">5</span>
+                </div>
+                <div class="info-item">
+                    <span>PUNTOS:</span>
+                    <span id="score" class="value">0</span>
+                </div>
+                <div class="info-item">
+                    <span>NIVEL:</span>
+                    <span id="level" class="value">1</span>
+                </div>
+                <div class="info-item">
+                    <span id="counterLabel">VITAMINAS:</span>
+                    <span id="counter" class="value">0</span>
+                </div>
+                <div class="info-item">
+                    <span id="powerDisplay" style="display: none;"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFO DEL NIVEL -->
+        <div class="level-info" id="levelInfo"></div>
+        
+        <!-- CANVAS DEL JUEGO -->
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="inventoryBar" class="inventory-bar"></div>
+        
+        <!-- PIE DEL JUEGO -->
+        <div class="game-footer">
+            <p id="footerText">← → Mover | ESPACIO Saltar | P Pausa</p>
+        </div>
+
+        <!-- PANTALLA GAME OVER -->
+        <div id="gameOverScreen" class="screen hidden">
+            <div class="screen-content">
+                <h2 id="gameOverTitle">GAME OVER</h2>
+                <p id="gameOverMessage">La proteína no sobrevivió el viaje</p>
+                <button onclick="location.reload()">Jugar de Nuevo</button>
+            </div>
+        </div>
+
+        <!-- PANTALLA PAUSA -->
+        <div id="pauseScreen" class="screen hidden">
+            <div class="screen-content">
+                <h2>JUEGO PAUSADO</h2>
+                <p>Presiona P para continuar</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
